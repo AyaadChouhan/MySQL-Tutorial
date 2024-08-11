@@ -315,3 +315,93 @@ mysql> select * from sectable where name like '%a_';
 |     13 | phd | japan   | khan  |
 |     15 | mca | india   | yasar |
 +--------+-----+---------+-------+
+==============================================================================
+foreign keys = foreign keys and joins are fundamental concepts that are often used together to retrieve and relate data from multiple tables.
+
+
+mysql> create table laptop(id int(2) primary key, model int, studentid int);
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> desc laptop
+    -> ;
++-----------+------+------+-----+---------+-------+
+| Field     | Type | Null | Key | Default | Extra |
++-----------+------+------+-----+---------+-------+
+| id        | int  | NO   | PRI | NULL    |       |
+| model     | int  | YES  |     | NULL    |       |
+| studentid | int  | YES  |     | NULL    |       |
++-----------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table laptops(id int(2), model varchar(1
+0), studentid int(2));
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+
+
+mysql> show tables;
++------------------+
+| Tables_in_mydata |
++------------------+
+| laptops          |
+| newtable         |
+| sectable         |
+| student          |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into laptops values(11, 'msi', 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into laptops values(12, 'macbook', 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from laptops;
++------+---------+-----------+
+| id   | model   | studentid |
++------+---------+-----------+
+|   11 | msi     |         1 |
+|   12 | macbook |         2 |
++------+---------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student;
++----+-----------+-----------+---------+
+| id | name      | city      | country |
++----+-----------+-----------+---------+
+|  1 | ayaad     | jodhpur   | india   |
+|  2 | khan      | delhi     | india   |
+|  3 | andy      | wasington | usa     |
+|  4 | ahsanjaib | ajman     | dubai   |
+|  5 | ahad      | mumbai    | india   |
++----+-----------+-----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select student.name, student.country from stude
+nt, laptops where student.id=laptops.studentid;
++-------+---------+
+| name  | country |
++-------+---------+
+| ayaad | india   |
+| khan  | india   |
++-------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select student.name, student.country, laptops.model from student, laptops where student.id=laptops.st
+udentid;
++-------+---------+---------+
+| name  | country | model   |
++-------+---------+---------+
+| ayaad | india   | msi     |
+| khan  | india   | macbook |
++-------+---------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select student.name, student.country, laptops.model from student, laptops where student.id=laptops.studentid and student.name='ayaad';
++-------+---------+-------+
+| name  | country | model |
++-------+---------+-------+
+| ayaad | india   | msi   |
++-------+---------+-------+
+1 row in set (0.00 sec)
+
