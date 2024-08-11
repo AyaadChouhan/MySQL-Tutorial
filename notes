@@ -1,0 +1,19 @@
+DataBase...
+Data-Base is a software that stores data in organized manner so it become esasy to manage the data
+
+
+there are two types of dataBase managment system 
+
+RDBMS and non-RDBMS;
+
+RDBMS = RDMBS(relational data base managment system) 
+it is use to store data in the form of table
+
+non-RDBMS = RDMBS(Non relational data base managment system)
+ it is use to store data in the form of documents;
+
+
+* MySQL is popular dataBase software use to handle data in relational manner(it stores data in form of table),
+  and it is a RDMS(relational data base managment system)
+
+

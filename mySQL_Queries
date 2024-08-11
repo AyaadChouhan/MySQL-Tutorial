@@ -1,0 +1,92 @@
+Note :- whenever we write a Queries it is must to end with semicolon[;] at the end of our Query
+=============================================================================
+
+create database [db-name] => this query is used for creating a database.
+
+syntax example :- create database mydata; 
+                // [enter] your database will be create.
+=============================================================================
+
+use [db-name] -> this is used for get into the database;
+
+example :- we have already a database which we created before now we want to goes into the data base and sees what's in there,
+           then we use 
+                    syntax :- use mydata;
+                    //now we are in databse which name is mydata and now we can perform operation,
+=============================================================================
+
+drop database [db-name] :- it is used for delete a database which we want to delete;
+
+syntax example :- drop database mydata;
+                  // now mydata is deleted.
+=============================================================================
+
+show databases :- it is used for show all databases which we have
+
+syntax example :- show databases;
+=============================================================================
+
+create table [table-name](col1, col2, col2 .......) -> it is used for createing tales;
+
+syntax example :-  create table mytable(faculty varchar(10) not null, id int(10) primary key not
+null, name varchar(20) not null  );
+
+varchar is uesd for strings;
+int is for Numbers;
+not null is used for we dont want to empty a column 
+
+all this things with parentheses () is for giving the limit letsay varchar(10) now faculty have a limit now you cannot write more then 10 words
+=============================================================================
+
+show tables -> it is used for show all tabled which is created;
+
+syntax :- show tables;
+=============================================================================
+
+desc mytable -> it is used for sees the rows of table not the inserted values.
+
+syntax :-
+          desc mydata;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| rollno  | int         | NO   |     | NULL    |       |
+| sub     | varchar(10) | NO   |     | NULL    |       |
+| country | varchar(10) | YES  |     | NULL    |       |
+| name    | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+=============================================================================
+
+drop table -> it is used for delete a table;
+
+syntax :- drop table mytable;
+=============================================================================
+
+alter table [old-table-name] -> it is used to update the table name;
+
+syntax :- alter table [mytable] rename to [newtable];
+=============================================================================
+
+insert into [table-name]() values() -> it is used for inserting the values in tables.
+
+syntax :- insert into mytable(rollno, sub, country, name) values(11, 'mca', 'china', 'ayaad');
+syntax :- insert into mytable values(11, 'mca', 'china', 'ayaad');
+//both are correct syntaxes.
+=============================================================================
+
+truncate table [table-name] -> it is use for remove all data of table.
+
+syntax :- alter table mytable;
+=============================================================================
+
+alter table [table-name] add col1 -> it is  used for add columns in the table.
+
+suntax :-
+            alter table mytable add hobbies;
+
+=============================================================================
+update [table-name] set [column-name]=value where col=value -> it used for fill the value which null and update the value which we want
+
+syntax :- 
+            update mytable set hobbies='gaming' where rollno=11;
+==============================================================================
